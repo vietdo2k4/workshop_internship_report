@@ -1,6 +1,6 @@
 baseURL = "https://vietdo2k4.github.io/workshop_internship_report/"
 relativeURLs = false
-canonifyURLs = false
+canonifyURLs = true
 defaultContentLanguage = "en"
 
 # Change the default theme to be use when building the site with Hugo

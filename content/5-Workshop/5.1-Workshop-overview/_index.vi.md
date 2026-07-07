@@ -10,21 +10,21 @@ pre : " <b> 5.1. </b> "
 
 #### 1. Phạm vi tài nguyên sử dụng
 
-**Examora - Online Exam Platform** được triển khai theo hướng **Console-first, SAM-lite optional**. Nhóm sẽ cấu hình tài nguyên chính trên **AWS Management Console** trước để chụp ảnh từng bước (step by step) cho workshop giúp mọi người có thể hiểu rõ từng bước cài đặt, cấu hình dịch vụ. Sau đó, nhóm sẽ sử dụng **AWS SAM-lite** để mô tả lại một phần tài nguyên serverless bằng Infrastructure as Code (IaC).
+**Examora - Online Exam Platform** được triển khai theo hướng **Console-first, SAM-lite optional**. Nhóm sẽ cấu hình tài nguyên chính trên **AWS Management Console** trước để chụp ảnh step by step cho workshop giúp mọi người có thể hiểu rõ từng bước cài đặt, cấu hình dịch vụ. Sau đó, nhóm sẽ sử dụng **AWS SAM-lite** để mô tả lại một phần tài nguyên serverless bằng Infrastructure as Code.
 
-Các dịch vụ chính được sử dụng trong workshop:
+**Examora** sử dụng các dịch vụ sau:
 
 | Nhóm | Dịch vụ |
 |---|---|
-| **Authentication** | Amazon Cognito, Amazon SES |
-| **Backend API** | AWS Lambda, Amazon API Gateway |
-| **Database external** | MongoDB Atlas |
-| **Secret/config** | AWS Secrets Manager |
-| **Async grading** | Amazon SQS, AWS Lambda |
-| **File upload/import** | Amazon S3, AWS Lambda |
-| **Frontend hosting** | Amazon S3, Amazon CloudFront |
-| **Protection** | AWS WAF |
-| **Monitoring** | Amazon CloudWatch Logs, AWS X-Ray |
-| **Permission** | AWS IAM |
+| Authentication | Amazon Cognito, Amazon SES |
+| Backend API | AWS Lambda, Amazon API Gateway |
+| Database external | MongoDB Atlas |
+| Secret/config | AWS Secrets Manager |
+| Async grading | Amazon SQS, AWS Lambda |
+| File upload/import | Amazon S3, AWS Lambda |
+| Frontend hosting | AWS Amplify Hosting |
+| DNS / Custom domain | Amazon Route 53 |
+| Monitoring | Amazon CloudWatch Logs, AWS X-Ray |
+| Permission | AWS IAM |
 
-**Examora — Online Exam Platform on AWS** được triển khai theo hướng **Console-first, SAM-lite optional**. Nghĩa là chúng ta sẽ cấu hình tài nguyên chính trên **AWS Management Console** trước để dễ kiểm soát, chụp ảnh trực quan từng bước của workshop. Sau khi hệ thống chạy ổn định, chúng ta mới sử dụng **AWS SAM-lite** để định nghĩa lại một phần tài nguyên Serverless bằng cách sử dụng Infrastructure as Code (IaC).
+

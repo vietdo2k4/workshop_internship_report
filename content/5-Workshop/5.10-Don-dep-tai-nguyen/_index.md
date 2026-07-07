@@ -1,5 +1,5 @@
-﻿---
-title : "Dọn dẹp tài nguyên"
+---
+title : "Resource Cleanup"
 date : 2024-01-01 
 weight : 10 
 chapter : false
