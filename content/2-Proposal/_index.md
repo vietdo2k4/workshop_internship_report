@@ -104,7 +104,7 @@ The Examora architecture is organized into frontend hosting, authentication, cor
 *   **Pre-Internship:** Plan initial project scope and evaluate the baseline legacy Examora architecture.
 *   **Internship Period (April - July):**
     *   **April:** Research and practice using official AWS service documentation and tutorials.
-    *   **May:** Plan requirements, design the system architecture, and draft AWS Architecture diagrams for Examora.
+    *   **May:** Collaborate with the KQPSV team to plan requirements, design the system architecture, and draft AWS Architecture diagrams for Examora.
     *   **June - July:** Implement the cloud infrastructure, execute integration tests, and compile the project report.
 *   **Post-Implementation:** Monitor, operate, and continuously optimize the serverless application resources.
 

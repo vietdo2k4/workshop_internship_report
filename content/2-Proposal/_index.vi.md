@@ -106,7 +106,7 @@ Kiến trúc Examora được chia thành các nhóm chính: frontend hosting, a
 *   **Trước thực tập:** Lên kế hoạch sơ khởi và phân tích hiện trạng dự án Examora.
 *   **Thực tập (Tháng 4 - Tháng 7):**
     *   **Tháng 4:** Tìm hiểu lý thuyết và thực hành theo các tài liệu hướng dẫn về dịch vụ đám mây của AWS.
-    *   **Tháng 5:** Lên kế hoạch chi tiết, phân tích yêu cầu, thiết kế kiến trúc hệ thống (AWS Architecture) cho dự án Examora.
+    *   **Tháng 5:** Cùng nhóm KQPSV lên kế hoạch chi tiết, phân tích yêu cầu, thiết kế kiến trúc hệ thống (AWS Architecture) cho dự án Examora.
     *   **Tháng 6 - 7:** Tiến hành triển khai hạ tầng Serverless, kiểm thử hệ thống tích hợp (E2E), tối ưu hóa tài nguyên và hoàn thiện báo cáo dự án.
 *   **Sau triển khai:** Tiếp tục theo dõi, vận hành và tối ưu hóa hệ thống serverless.
 
