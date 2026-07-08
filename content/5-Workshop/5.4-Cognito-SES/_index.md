@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.4. </b> "
 ---
 
-In this step, we will configure **Amazon Cognito User Pool** combined with **Amazon SES** to handle user authentication and authorization for the **Examora - Online Exam Platform on AWS** project.
+In this step, we will configure **Amazon Cognito User Pool** combined with **Amazon SES** to handle user authentication and authorization for the **Examora - Online Exam Platform ** project.
 
 #### 5.4.1. Objectives
 The authentication system will manage the following key features:

@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.4. </b> "
 ---
 
-Trong bước này, chúng ta sẽ cấu hình **Amazon Cognito User Pool** kết hợp với **Amazon SES** để xử lý các chức năng xác thực và phân quyền người dùng cho dự án **Examora - Online Exam Platform on AWS**.
+Trong bước này, chúng ta sẽ cấu hình **Amazon Cognito User Pool** kết hợp với **Amazon SES** để xử lý các chức năng xác thực và phân quyền người dùng cho dự án **Examora - Online Exam Platform **.
 
 #### 5.4.1. Mục tiêu
 Hệ thống xác thực sẽ quản lý các chức năng chính bao gồm:

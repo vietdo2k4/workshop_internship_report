@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# Examora - Online Exam Platform on AWS
+# Examora - Online Exam Platform 
 
 #### Overview
 

@@ -10,15 +10,7 @@ Chúng ta cần cấu hình biến môi trường (**Environment Variables**) ch
 
 #### Các bước thực hiện:
 
-1. Cấu hình Environment Variables:
-   * Chọn function `examora-backend-api` -> Chọn tab **Configuration** (Cấu hình) -> Mục **Environment variables** ở menu trái -> Bấm **Edit**.
-   * Thêm các cặp Key/Value cấu hình cho dự án:
-     * `NODE_ENV`: `production` hoặc `development` (môi trường ứng dụng).
-     * `MONGO_SECRET_NAME`: `/examora/dev/mongodb` (Tên secret đã tạo ở AWS Secrets Manager chứa kết nối DB).
-     * `COGNITO_USER_POOL_ID`: `<USER_POOL_ID_CỦA_BẠN>` (Lấy từ phần Cognito đã cấu hình ở bước trước).
-     * `COGNITO_CLIENT_ID`: `<APP_CLIENT_ID_CỦA_BẠN>` (Lấy từ Cognito App Client).
-     * `FRONTEND_URL`: URL trang web Frontend (ví dụ: `https://vietdo2k4.github.io` để cấu hình CORS bảo mật).
-   * Bấm **Save** để lưu các biến môi trường.
+1. Vào function vừa tạo -> **Configuration** -> **Environment variables** -> **Edit** -> Điền các Key, Value của dự án -> Nhấn **Save** để lưu.
 
    ![Cấu hình Environment Variables](/images/5-Workshop/5.5-Lambda/5.5.4-configure-environment-variables/LambdaEnv5.1.png)
 

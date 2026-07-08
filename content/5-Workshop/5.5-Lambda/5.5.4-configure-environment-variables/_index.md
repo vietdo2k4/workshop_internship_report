@@ -10,15 +10,7 @@ We need to configure environment variables for the Lambda function so that the E
 
 #### Step-by-Step Instructions:
 
-1. Configure Environment Variables:
-   * Select the `examora-backend-api` function -> navigate to the **Configuration** tab -> choose **Environment variables** in the left menu -> click **Edit**.
-   * Populate the key-value pairs required for the project:
-     * `NODE_ENV`: `production` (sets the execution mode of the application).
-     * `MONGO_SECRET_NAME`: `/examora/dev/mongodb` (the Secrets Manager secret path created earlier).
-     * `COGNITO_USER_POOL_ID`: `<YOUR_USER_POOL_ID>` (the User Pool ID obtained from the Cognito configuration step).
-     * `COGNITO_CLIENT_ID`: `<YOUR_APP_CLIENT_ID>` (the App Client ID obtained from the Cognito configuration step).
-     * `FRONTEND_URL`: The origin URL of your frontend application (e.g., `https://vietdo2k4.github.io` to configure CORS policies securely).
-   * Click **Save** to persist the environment settings.
+1. Select the newly created function -> navigate to the **Configuration** tab -> choose **Environment variables** -> click **Edit** -> Populate the key-value pairs required for the project -> click **Save** to apply the configuration.
 
    ![Configure Environment Variables](/images/5-Workshop/5.5-Lambda/5.5.4-configure-environment-variables/LambdaEnv5.1.png)
 
