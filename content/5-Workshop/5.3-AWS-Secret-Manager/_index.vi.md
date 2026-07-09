@@ -1,6 +1,6 @@
 ---
 title : "Cấu hình AWS Secrets Manager cho Examora"
-date : 2024-01-01 
+date: 2026-07-08
 weight : 3 
 chapter : false
 pre : " <b> 5.3. </b> "

@@ -1,59 +1,37 @@
 ---
-title: "Worklog Tuần 9"
-date: 2024-01-01
-weight: 1
+title: "Triển khai luồng xác thực người dùng Cognito và đưa Express Backend lên AWS Lambda"
+date: 2026-07-08
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 9:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Triển khai luồng xác thực người dùng cho Examora bằng Amazon Cognito và Amazon SES.
+* Cập nhật frontend cho các chức năng đăng ký, xác thực OTP, đăng nhập, đăng xuất và quên mật khẩu.
+* Bổ sung dữ liệu định danh từ Cognito vào thông tin người dùng trong MongoDB.
+* Sửa backend để verify Cognito JWT và đồng bộ profile người dùng.
+* Đưa Express backend vào Lambda handler và bảo vệ API bằng API Gateway Authorizer.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Cấu hình Cognito User Pool và App Client cho Examora <br> - **Thực hành:** <br>&emsp; + Tạo các group người dùng chính <br>&emsp; + Cấu hình đăng ký, đăng nhập bằng email <br>&emsp; + Verify email identity trong Amazon SES | 15/06/2026 | 15/06/2026 | <https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools.html> <br>  <br> <https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html> |
+| 3 | - Cập nhật dữ liệu người dùng để lưu thông tin định danh từ Cognito <br> - Bổ sung thông tin cần thiết cho việc đồng bộ tài khoản và phân quyền <br> - Kiểm tra lại logic role hiện có để không ảnh hưởng nghiệp vụ cũ | 16/06/2026 | 16/06/2026 |  <br>  |
+| 4 | - Sửa frontend cho các luồng xác thực bằng Cognito <br> - **Thực hành:** <br>&emsp; + Cập nhật đăng ký và xác thực OTP email <br>&emsp; + Cập nhật đăng nhập, đăng xuất và quên mật khẩu <br>&emsp; + Lưu token để gọi các API cần đăng nhập | 17/06/2026 | 18/06/2026 |   <br> <https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-access-token.html> |
+| 5 | - Sửa backend để verify Cognito JWT và đồng bộ profile vào MongoDB <br> - **Thực hành:** <br>&emsp; + Đọc token từ header `Authorization` <br>&emsp; + Đồng bộ thông tin người dùng sau khi đăng nhập <br>&emsp; + Mapping Cognito Groups sang role hệ thống | 19/06/2026 | 19/06/2026 |  <br> <https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html> |
+| 6 | - Đưa Express backend vào Lambda handler và cấu hình API Gateway Authorizer <br> - **Thực hành:** <br>&emsp; + Tạo entry point cho Lambda Backend API <br>&emsp; + Cấu hình các biến môi trường cần thiết <br>&emsp; + Test `/health` và một API cần token | 20/06/2026 | 20/06/2026 |    <br> <https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html> |
 
 ### Kết quả đạt được tuần 9:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Cấu hình được Cognito User Pool, App Client, nhóm người dùng và email identity trong SES cho luồng xác thực.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Bổ sung được thông tin định danh từ Cognito vào dữ liệu người dùng mà vẫn giữ được phân quyền nghiệp vụ hiện có.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Cập nhật được frontend cho các luồng đăng ký, xác thực OTP, đăng nhập, đăng xuất và quên mật khẩu.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Backend verify được Cognito JWT, đồng bộ profile người dùng và mapping group sang role hệ thống.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Tạo được Lambda handler cho Express backend, cấu hình API Gateway Authorizer và test được API cần token.

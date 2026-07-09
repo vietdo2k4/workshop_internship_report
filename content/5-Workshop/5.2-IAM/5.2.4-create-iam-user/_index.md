@@ -1,6 +1,6 @@
 ---
 title : "Create IAM User and Enable MFA"
-date : 2024-01-01 
+date: 2026-07-08
 weight : 4
 chapter : false
 pre : " <b> 5.2.4. </b> "
@@ -31,9 +31,7 @@ pre : " <b> 5.2.4. </b> "
 
 3. Enable MFA (Multi-Factor Authentication) for the IAM user to enhance AWS Console sign-in security:
 
-{{% notice note %}}
-Regarding access keys, only create them for users who need to use the AWS CLI or SAM to deploy/cleanup resources. Do not create access keys for all members.
-{{% /notice %}}
+
 
 - Click on the user that needs MFA, then select the **Security credentials** tab.
 - Under **Multi-factor authentication (MFA)**, choose **Assign MFA device**:

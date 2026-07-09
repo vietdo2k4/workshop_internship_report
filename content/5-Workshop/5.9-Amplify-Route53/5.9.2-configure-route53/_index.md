@@ -1,6 +1,6 @@
 ---
 title : "Configure Amazon Route 53 for Custom Domain"
-date : 2024-01-01 
+date: 2026-07-08
 weight : 2
 chapter : false
 pre : " <b> 5.9.2. </b> "

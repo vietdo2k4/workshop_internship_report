@@ -1,6 +1,6 @@
 ---
 title : "Grant S3 Access to Lambda Backend API"
-date : 2024-01-01 
+date: 2026-07-08
 weight : 3
 chapter : false
 pre : " <b> 5.7.3. </b> "

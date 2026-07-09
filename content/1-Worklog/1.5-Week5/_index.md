@@ -1,57 +1,37 @@
 ---
-title: "Week 5 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Exploring User Authentication with Amazon Cognito and Email Sending with Amazon SES"
+date: 2026-07-08
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 5 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Understand the role of Amazon Cognito in user sign-up, sign-in, and user management.
+* Configure a User Pool, App Client, and basic authentication flow.
+* Use Cognito Groups to classify users by permission groups.
+* Review Amazon SES for email verification and password recovery flows.
+* Understand how JWT tokens are used to protect APIs.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 2 | - Review Amazon Cognito User Pools <br> - Understand the sign-up, account confirmation, sign-in, and token flow <br> - Identify the role of App Client in a web application | 18/05/2026 | 18/05/2026 | <https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools.html> <br>  |
+| 3 | - Complete the SPA authentication lab with Amazon Cognito <br> - **Practice:** <br>&emsp; + Create/configure a Cognito User Pool <br>&emsp; + Configure an App Client for the web application <br>&emsp; + Test user sign-up and sign-in | 19/05/2026 | 19/05/2026 | <https://docs.aws.amazon.com/cognito/latest/developerguide/managing-users.html> |
+| 4 | - Review Cognito Groups and group information in tokens <br> - **Practice:** <br>&emsp; + Create sample user groups <br>&emsp; + Add users to the appropriate groups <br>&emsp; + Check group information in the token after sign-in | 20/05/2026 | 20/05/2026 | <https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html> <br> <https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-access-token.html> |
+| 5 | - Review Amazon SES for verification and password reset emails <br> - **Practice:** <br>&emsp; + Create an email identity in SES <br>&emsp; + Verify the email identity <br>&emsp; + Review sending limits while the account is still in the SES sandbox | 21/05/2026 | 21/05/2026 | <https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html> <br> <https://docs.aws.amazon.com/ses/latest/dg/verify-addresses-and-domains.html> <br> <https://docs.aws.amazon.com/ses/latest/dg/request-production-access.html> |
+| 6 | - Review how to protect APIs using a Cognito/JWT Authorizer <br> - **Practice:** <br>&emsp; + Check how API Gateway uses a Cognito User Pool as an authorizer <br>&emsp; + Review how to send a token in the `Authorization` header <br>&emsp; + Distinguish between public APIs and authenticated APIs | 22/05/2026 | 22/05/2026 |  <https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html> <br> <https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-accessing-resources-api-gateway-and-lambda.html> |
 
-### Week 5 Achievements:
+### Week 5 Results:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Understood the role of Cognito User Pool, App Client, and the sign-up/sign-in flow in a web application.
 
-* Successfully created and configured an AWS Free Tier account.
+* Configured SPA authentication with Amazon Cognito and tested user sign-up and sign-in.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Created Cognito Groups, assigned users to groups, and checked group information in tokens.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Verified an email identity in Amazon SES and understood sending limits while the account is still in the sandbox.
 
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Learned how a Cognito/JWT Authorizer protects APIs and how the client sends a token through the `Authorization` header.

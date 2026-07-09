@@ -1,59 +1,39 @@
 ---
-title: "Worklog Tuần 11"
-date: 2024-01-01
-weight: 2
+title: "Thiết lập hàng đợi Amazon SQS và triển khai Lambda Grading Worker chấm thi bất đồng bộ"
+date: 2026-07-08
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 11:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tách logic chấm bài khỏi request nộp bài bằng Amazon SQS.
+* Xây dựng Lambda Grading Worker để xử lý chấm bài bất đồng bộ.
+* Tối ưu lại sơ đồ kiến trúc theo luồng submit bài và chấm điểm.
+* Tìm hiểu Amplify Hosting và Route 53 để chuẩn bị triển khai frontend.
+* Test lại các chức năng chính sau khi tích hợp các luồng serverless.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Phân tích logic chấm bài hiện tại trong backend <br> - Xác định phần cần tách khỏi request nộp bài <br> - Thiết kế payload gửi vào SQS chỉ gồm các ID cần thiết | 29/06/2026 | 29/06/2026 | <https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html> |
+| 3 | - Hoàn thiện luồng chấm bài bằng SQS và Lambda Worker <br> - Tối ưu lại sơ đồ kiến trúc theo luồng SQS grading <br> - Backend gửi grading job vào SQS, Lambda Worker nhận message và xử lý chấm điểm | 30/06/2026 | 30/06/2026 | <https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html> <br> <https://docs.aws.amazon.com/lambda/latest/dg/services-sqs-configure.html> |
+| 4 | - Tìm hiểu Amplify Hosting để chuẩn bị deploy frontend <br> - Xem cách kết nối custom domain với Amplify bằng Route 53 <br> - Ghi lại các cấu hình cần chuẩn bị: build output, environment variables, rewrite rule và domain | 01/07/2026 | 01/07/2026 | <https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html> <br> <https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html> <br> <https://docs.aws.amazon.com/amplify/latest/userguide/to-add-a-custom-domain-managed-by-amazon-route-53.html> |
+| 5 | - Bổ sung xử lý lỗi cho luồng chấm bài bất đồng bộ <br> - Cấu hình visibility timeout phù hợp với thời gian chấm bài <br> - Ghi nhận trạng thái xử lý thành công/thất bại và thêm log để kiểm tra lỗi worker | 02/07/2026 | 02/07/2026 | <https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html> <br> <https://docs.aws.amazon.com/lambda/latest/dg/services-sqs-errorhandling.html> |
+| 6 | - Test lại các chức năng chính sau khi tích hợp <br> - Test đăng nhập và gọi API cần token <br> - Test upload/import Word, nộp bài và nhận kết quả sau khi worker chấm | 03/07/2026 | 03/07/2026 | <br> <https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html> |
 
 ### Kết quả đạt được tuần 11:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Xác định được phần logic chấm bài cần tách khỏi request nộp bài.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Backend gửi được grading job vào SQS và Lambda Worker xử lý được message chấm bài.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Tối ưu lại sơ đồ kiến trúc với luồng submit bài, SQS Grading Queue và Lambda Grading Worker.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Nắm được cách Amplify Hosting kết hợp với Route 53 để chuẩn bị deploy frontend.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Bổ sung được xử lý lỗi, trạng thái xử lý và log cho luồng chấm bài bất đồng bộ.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Test lại được các chức năng chính: xác thực, upload/import Word, nộp bài và nhận kết quả.

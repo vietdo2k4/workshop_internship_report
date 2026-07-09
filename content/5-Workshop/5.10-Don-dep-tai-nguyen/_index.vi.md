@@ -1,6 +1,6 @@
 ---
 title : "Dọn dẹp tài nguyên"
-date : 2024-01-01 
+date: 2026-07-08
 weight : 10 
 chapter : false
 pre : " <b> 5.10. </b> "

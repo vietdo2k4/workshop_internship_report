@@ -1,57 +1,37 @@
 ---
-title: "Week 6 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Designing REST APIs with API Gateway, Writing Lambda Functions, and S3 Presigned URLs"
+date: 2026-07-08
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 6 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Understand the role of API Gateway in creating backend endpoints.
+* Write and test a simple Lambda function for request handling.
+* Connect API Gateway with Lambda using Lambda proxy integration.
+* Configure CORS for frontend-to-backend API calls.
+* Practice uploading files to S3 using a presigned URL.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 2 | - Review API Gateway HTTP API, route, method, and stage <br> - Check how API Gateway receives client requests and forwards them to a backend <br> - Note the difference between a public endpoint and an endpoint that needs protection | 25/05/2026 | 25/05/2026 | <https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html> <br> <https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html> |
+| 3 | - Create a simple Lambda function to handle requests <br> - **Practice:** <br>&emsp; + Create a Lambda function that returns a JSON response <br>&emsp; + Test the input event and output response <br>&emsp; + Configure a sample environment variable for Lambda | 26/05/2026 | 26/05/2026 | <https://docs.aws.amazon.com/lambda/latest/dg/welcome.html> <br> <https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html> |
+| 4 | - Connect API Gateway with Lambda using Lambda proxy integration <br> - **Practice:** <br>&emsp; + Create a route that invokes the Lambda function <br>&emsp; + Test the API using a browser or Postman <br>&emsp; + Review the request/response format through API Gateway | 27/05/2026 | 27/05/2026 | <https://000079.awsstudygroup.com/> <br> <https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html> |
+| 5 | - Review CORS when a frontend calls an API from another domain <br> - **Practice:** <br>&emsp; + Configure CORS for an HTTP API <br>&emsp; + Check allowed origin, method, and header settings <br>&emsp; + Record common errors when CORS is missing | 28/05/2026 | 28/05/2026 | <https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html> |
+| 6 | - Practice uploading a file to S3 using a presigned URL <br> - **Practice:** <br>&emsp; + Create a private bucket for upload testing <br>&emsp; + Generate a presigned URL for object upload <br>&emsp; + Upload a file using the presigned URL and check the object in the bucket | 29/05/2026 | 29/05/2026 | <https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html> <br> <https://docs.aws.amazon.com/AmazonS3/latest/userguide/PresignedUrlUploadObject.html> |
 
-### Week 6 Achievements:
+### Week 6 Results:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Understood how API Gateway organizes HTTP APIs through routes, methods, and stages.
 
-* Successfully created and configured an AWS Free Tier account.
+* Created a simple Lambda function and tested its input event, output response, and environment variable.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Connected API Gateway with Lambda using Lambda proxy integration and tested the API with a browser/Postman.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Configured CORS for an HTTP API and identified common frontend cross-origin request issues.
 
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Generated a presigned URL to upload files to S3 without directly granting AWS credentials to the uploader.

@@ -1,6 +1,6 @@
 ---
 title : "Tạo nhóm quản trị IAM"
-date : 2024-01-01 
+date: 2026-07-08
 weight : 3
 chapter : false
 pre : " <b> 5.2.3. </b> "
@@ -18,9 +18,7 @@ pre : " <b> 5.2.3. </b> "
 
 ![Attach AdministratorAccess](/images/5-Workshop/5.2-IAM/5.2.3-create-admin-group/IAM2.3.png)
 
-{{% notice info %}}
-**AdministratorAccess** được sử dụng tạm thời cho giai đoạn cấu hình ban đầu.
-{{% /notice %}}
+
 
 4. Tạo nhóm người dùng thành công:
 

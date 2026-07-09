@@ -1,6 +1,6 @@
 ---
 title : "Cấu hình Amazon SES cho email gửi từ Cognito"
-date : 2024-01-01 
+date: 2026-07-08
 weight : 1
 chapter : false
 pre : " <b> 5.4.3. </b> "

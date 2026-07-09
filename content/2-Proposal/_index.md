@@ -1,6 +1,6 @@
 ---
 title: "Proposal"
-date: 2024-01-01
+date: 2026-07-08
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
@@ -101,12 +101,10 @@ The Examora architecture is organized into frontend hosting, authentication, cor
 - CORS must allow local development, the Amplify domain, and the official custom domain.
 
 ### 5. Timeline & Milestones
-*   **Pre-Internship:** Plan initial project scope and evaluate the baseline legacy Examora architecture.
 *   **Internship Period (April - July):**
     *   **April:** Research and practice using official AWS service documentation and tutorials.
     *   **May:** Collaborate with the KQPSV team to plan requirements, design the system architecture, and draft AWS Architecture diagrams for Examora.
     *   **June - July:** Implement the cloud infrastructure, execute integration tests, and compile the project report.
-*   **Post-Implementation:** Monitor, operate, and continuously optimize the serverless application resources.
 
 ### 6. Budget Estimation
 You can review the cost estimate from the exported AWS Pricing Calculator file.

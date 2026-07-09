@@ -1,59 +1,38 @@
 ---
-title: "Worklog Tuần 8"
-date: 2024-01-01
-weight: 1
+title: "Thiết kế kiến trúc tổng quan và lập kế hoạch triển khai dự án cuối kỳ Examora"
+date: 2026-07-08
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 8:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Bắt đầu dự án cuối kỳ Examora theo hướng kiến trúc Serverless trên AWS.
+* Vẽ sơ đồ kiến trúc tổng quan cho dự án.
+* Xác định các chức năng chính cần có trong phiên bản MVP.
+* Tham khảo thêm tài liệu và lab về luồng frontend gọi API Gateway.
+* Chốt phạm vi và các dịch vụ AWS sử dụng trong dự án.
+* Làm quen với hướng triển khai CI/CD cho ứng dụng serverless bằng AWS SAM.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Vẽ sơ bộ sơ đồ kiến trúc Serverless cho Examora <br> - Xác định các lớp chính: frontend, authentication, API/backend, database, storage, async processing và monitoring <br> - Thể hiện luồng request chính từ người dùng đến các dịch vụ AWS | 08/06/2026 | 08/06/2026 | <https://docs.aws.amazon.com/whitepapers/latest/serverless-multi-tier-architectures-api-gateway-lambda/web-application.html> <br>  |
+| 3 | - Xác định các chức năng chính của Examora từ source code và yêu cầu nghiệp vụ có sẵn <br> - Gom nhóm chức năng theo module: tài khoản, lớp học, bài giảng/đề thi, upload file, làm bài và lịch sử thi <br> - Ghi lại các phần cần triển khai mới khi đưa hệ thống lên AWS | 09/06/2026 | 09/06/2026 | <https://docs.aws.amazon.com/wellarchitected/latest/framework/requirements.html> |
+| 4 | - Thực hành lab frontend gọi API Gateway để hiểu luồng tích hợp client và backend <br> - **Thực hành:** <br>&emsp; + Xem cách cấu hình API Gateway cho backend endpoint <br>&emsp; + Test API bằng Postman <br>&emsp; + Kiểm tra cách frontend gọi API endpoint | 10/06/2026 | 10/06/2026 | <https://000135.awsstudygroup.com/> <br> <https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html> |
+| 5 | - Chốt phạm vi và các dịch vụ sử dụng trong dự án Examora <br> - Xác định các dịch vụ chính: Amplify Hosting, Cognito, SES, API Gateway, Lambda, MongoDB Atlas, S3, SQS, CloudWatch, X-Ray, Secrets Manager và IAM <br> | 11/06/2026 | 11/06/2026 | <https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/welcome.html> |
+| 6 | - Làm quen với CI/CD cho ứng dụng serverless bằng AWS SAM <br> - **Thực hành:** <br>&emsp; + Xem luồng `sam build`, `sam deploy` và deploy tự động bằng pipeline <br>&emsp; + Đọc cách `sam pipeline bootstrap` và `sam pipeline init` chuẩn bị cấu hình pipeline <br>&emsp; + Phác thảo pipeline đơn giản cho backend serverless | 12/06/2026 | 12/06/2026 | <https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/deploying-cicd-overview.html> <br> <https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-generating-example-ci-cd.html> <br> |
 
 ### Kết quả đạt được tuần 8:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Vẽ được sơ đồ kiến trúc Serverless tổng quan cho Examora.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Xác định được các module chính của dự án: tài khoản, lớp học, bài giảng/đề thi, upload file, làm bài và lịch sử thi.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Hoàn thành lab tham khảo về luồng frontend gọi API Gateway và test API bằng Postman.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Chốt được phạm vi MVP và các dịch vụ AWS sẽ sử dụng cho Examora.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Nắm được hướng triển khai CI/CD cho ứng dụng serverless bằng AWS SAM và phác thảo được pipeline backend cơ bản.

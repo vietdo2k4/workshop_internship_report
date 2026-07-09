@@ -1,6 +1,6 @@
 ---
 title : "Configure JWT Authorizer and CORS for API Gateway"
-date : 2024-01-01 
+date: 2026-07-08
 weight : 3
 chapter : false
 pre : " <b> 5.6.3. </b> "

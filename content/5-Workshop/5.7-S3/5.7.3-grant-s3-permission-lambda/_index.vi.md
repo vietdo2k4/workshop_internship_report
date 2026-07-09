@@ -1,6 +1,6 @@
 ---
 title : "Cấp quyền truy cập S3 cho Lambda Backend API"
-date : 2024-01-01 
+date: 2026-07-08
 weight : 3
 chapter : false
 pre : " <b> 5.7.3. </b> "

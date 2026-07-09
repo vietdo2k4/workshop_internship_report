@@ -1,58 +1,37 @@
 ---
-title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
+title: "Xây dựng REST API với API Gateway, viết Lambda Function và tạo S3 Presigned URL"
+date: 2026-07-08
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 6:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Nắm vai trò của API Gateway trong việc tạo endpoint cho backend.
+* Viết và kiểm thử Lambda function xử lý request đơn giản.
+* Kết nối API Gateway với Lambda bằng Lambda proxy integration.
+* Cấu hình CORS cho API khi frontend gọi backend.
+* Thực hành upload file lên S3 bằng presigned URL.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Tìm hiểu tiếp về API Gateway HTTP API, route, method và stage <br> - Xem cách API Gateway nhận request từ client và chuyển đến backend <br> - Ghi lại sự khác nhau giữa public endpoint và endpoint cần cấu hình bảo vệ | 25/05/2026 | 25/05/2026 | <https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html> <br> <https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html> |
+| 3 | - Thực hành tạo Lambda function, xử lý request đơn giản <br> - **Thực hành:** <br>&emsp; + Tạo Lambda function trả về JSON response <br>&emsp; + Kiểm tra input event và output response <br>&emsp; + Cấu hình thử environment variable cho Lambda | 26/05/2026 | 26/05/2026 | <https://docs.aws.amazon.com/lambda/latest/dg/welcome.html> <br> <https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html> |
+| 4 | - Kết nối API Gateway với Lambda bằng Lambda proxy integration <br> - **Thực hành:** <br>&emsp; + Tạo route gọi vào Lambda function <br>&emsp; + Kiểm tra API bằng browser hoặc Postman <br>&emsp; + Xem request/response format khi đi qua API Gateway | 27/05/2026 | 27/05/2026 | <https://000079.awsstudygroup.com/> <br> <https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html> |
+| 5 | - Tìm hiểu về CORS khi frontend gọi API khác domain <br> - **Thực hành:** <br>&emsp; + Cấu hình CORS cho HTTP API <br>&emsp; + Kiểm tra allowed origin, method và header <br>&emsp; + Ghi lại lỗi thường gặp khi thiếu CORS | 28/05/2026 | 28/05/2026 | <https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html> |
+| 6 | - Thực hành upload file lên S3 bằng presigned URL <br> - **Thực hành:** <br>&emsp; + Tạo private bucket dùng cho upload thử nghiệm <br>&emsp; + Tạo presigned URL cho thao tác upload object <br>&emsp; + Upload file bằng presigned URL và kiểm tra object trong bucket | 29/05/2026 | 29/05/2026 | <https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html> <br> <https://docs.aws.amazon.com/AmazonS3/latest/userguide/PresignedUrlUploadObject.html> |
 
 ### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Nắm được cách API Gateway tổ chức HTTP API thông qua route, method và stage.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Tạo được Lambda function đơn giản, kiểm tra input event, output response và environment variable.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Kết nối được API Gateway với Lambda bằng Lambda proxy integration và kiểm thử API bằng browser/Postman.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Cấu hình được CORS cho HTTP API và nhận biết lỗi khi frontend bị chặn bởi cross-origin request.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Tạo được presigned URL để upload file lên S3 mà không cần cấp AWS credentials trực tiếp cho phía upload.

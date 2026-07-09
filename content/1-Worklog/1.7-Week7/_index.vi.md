@@ -1,59 +1,39 @@
 ---
-title: "Worklog Tuần 7"
-date: 2024-01-01
-weight: 1
+title: "Tìm hiểu xử lý bất đồng bộ serverless, tích hợp SQS, CloudWatch và chốt đề tài thực tập"
+date: 2026-07-08
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 7:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu cách xử lý bất đồng bộ trong kiến trúc serverless.
+* Thực hành luồng S3 ObjectCreated kích hoạt Lambda.
+* Sử dụng SQS để tách tác vụ xử lý nền khỏi request chính.
+* Theo dõi Lambda bằng CloudWatch Logs và X-Ray.
+* Chốt hướng đề tài, phạm vi và kiến trúc tổng quan cho dự án cuối kỳ.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Tìm hiểu kiến trúc event-driven với SNS và SQS <br> - Phân biệt message queue và publish/subscribe <br> - Xem cách queue giúp tách hệ thống gửi yêu cầu và hệ thống xử lý nền | 01/06/2026 | 01/06/2026 | <https://000077.awsstudygroup.com/vi/> <br> <https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html> |
+| 3 | - Thực hành S3 ObjectCreated trigger Lambda <br> - **Thực hành:** <br>&emsp; + Tạo S3 bucket dùng cho lab <br>&emsp; + Cấu hình event notification khi upload object <br>&emsp; + Kiểm tra Lambda được gọi sau khi file được upload | 02/06/2026 | 02/06/2026 |  <br> <https://docs.aws.amazon.com/lambda/latest/dg/with-s3-example.html> |
+| 4 | - Thực hành xử lý message bằng SQS và Lambda <br> - **Thực hành:** <br>&emsp; + Tạo SQS queue thử nghiệm <br>&emsp; + Gửi message mẫu vào queue <br>&emsp; + Cấu hình Lambda đọc và xử lý message từ queue | 03/06/2026 | 03/06/2026 | <https://000083.awsstudygroup.com/vi/> <br> <https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html> <br> <https://docs.aws.amazon.com/lambda/latest/dg/services-sqs-configure.html> |
+| 5 | - Theo dõi Lambda bằng CloudWatch Logs và X-Ray <br> - **Thực hành:** <br>&emsp; + Xem log của Lambda trong CloudWatch Logs <br>&emsp; + Bật X-Ray tracing cho Lambda function <br>&emsp; + Kiểm tra lỗi và thời gian xử lý của request | 04/06/2026 | 04/06/2026 | <https://000140.awsstudygroup.com/vi/> <br> <br> <https://docs.aws.amazon.com/lambda/latest/dg/monitoring-cloudwatchlogs-view.html> |
+| 6 | - Lên kế hoạch và chốt hướng dự án cuối kỳ: Examora <br> - Chốt kiến trúc Serverless cho dự án <br> - Xác định các nhóm chức năng chính: authentication, API/backend, upload file, import Word, chấm bài bất đồng bộ và monitoring | 05/06/2026 | 05/06/2026 | <https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/welcome.html> <br> <https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html> |
 
 ### Kết quả đạt được tuần 7:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Hiểu được vai trò của SQS và SNS trong kiến trúc event-driven.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Cấu hình được S3 ObjectCreated event để kích hoạt Lambda sau khi upload file.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Tạo được SQS queue, gửi message mẫu và cấu hình Lambda xử lý message từ queue.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Xem được Lambda logs trong CloudWatch và bật X-Ray tracing để theo dõi request.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Chốt được đề tài cuối kỳ là Examora theo hướng AWS Serverless.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Xác định được các nhóm chức năng chính cần triển khai trong Examora: authentication, API/backend, upload file, import Word, chấm bài bất đồng bộ và monitoring.

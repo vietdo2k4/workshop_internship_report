@@ -1,40 +1,22 @@
 ---
 title: "Nhật ký công việc"
-date: 2024-01-01
+date: 2026-07-08
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+Nhật ký hoạt động chi tiết qua từng tuần thực tập:
 
-**Trong trang này** bạn sẽ cần giới thiệu worklog của bạn **như thế nào**? Bạn hoàn thành chương trình trong vòng **bao nhiêu tuần**? Bạn **đã làm gì** trong các tuần đó?
-
-
-Thông thường và cũng là tiêu chuẩn, một worklog được thực hiện trong khoảng 3 tháng (trong suốt thời gian thực tập) với nội dung các tuần như sau:
-
-**Tuần 1:** [Làm quen với AWS và các dịch vụ cơ bản trong AWS](1.1-week1/)
-
-**Tuần 2:** [Làm công việc A...](1.2-week2/)
-
-**Tuần 3:** [Làm công việc B...](1.3-week3/)
-
-**Tuần 4:** [Làm công việc C...](1.4-week4/)
-
-**Tuần 5:** [Làm công việc D...](1.5-week5/)
-
-**Tuần 6:** [Làm công việc E...](1.6-week6/)
-
-**Tuần 7:** [Làm công việc G...](1.7-week7/)
-
-**Tuần 8:** [Làm công việc H...](1.8-week8/)
-
-**Tuần 9:** [Làm công việc I...](1.9-week9/)
-
-**Tuần 10:** [Làm công việc L...](1.10-week10/)
-
-**Tuần 11:** [Làm công việc M...](1.11-week11/)
-
-**Tuần 12:** [Làm công việc N...](1.12-week12/)
+*   **Tuần 1:** [Khởi động thực tập, làm quen đội ngũ và tìm hiểu nền tảng AWS cơ bản](1.1-Week1/)
+*   **Tuần 2:** [Sử dụng AWS Management Console, cấu hình AWS CLI và tìm hiểu IAM, S3, EC2](1.2-Week2/)
+*   **Tuần 3:** [Thiết kế sơ đồ kiến trúc AWS và thực hành tích hợp API Gateway với Lambda](1.3-Week3/)
+*   **Tuần 4:** [Quản lý tài nguyên AWS bằng Resource Groups, thiết lập quyền IAM và giám sát chi phí](1.4-Week4/)
+*   **Tuần 5:** [Nghiên cứu Amazon Cognito quản lý người dùng và Amazon SES gửi email xác thực](1.5-Week5/)
+*   **Tuần 6:** [Xây dựng REST API với API Gateway, viết Lambda Function và tạo S3 Presigned URL](1.6-Week6/)
+*   **Tuần 7:** [Tìm hiểu xử lý bất đồng bộ serverless, tích hợp SQS, CloudWatch và chốt đề tài thực tập](1.7-Week7/)
+*   **Tuần 8:** [Thiết kế kiến trúc tổng quan và lập kế hoạch triển khai dự án cuối kỳ Examora](1.8-Week8/)
+*   **Tuần 9:** [Triển khai luồng xác thực người dùng Cognito và đưa Express Backend lên AWS Lambda](1.9-Week9/)
+*   **Tuần 10:** [Xây dựng luồng tải tập tin lên S3 và quy trình nhập câu hỏi tự động từ file Word](1.10-Week10/)
+*   **Tuần 11:** [Thiết lập hàng đợi Amazon SQS và triển khai Lambda Grading Worker chấm thi bất đồng bộ](1.11-Week11/)
+*   **Tuần 12:** [Triển khai Frontend lên AWS Amplify Hosting, cấu hình Custom Domain và viết báo cáo](1.12-Week12/)

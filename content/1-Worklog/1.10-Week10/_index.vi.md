@@ -1,59 +1,37 @@
 ---
-title: "Worklog Tuần 10"
-date: 2024-01-01
-weight: 2
+title: "Xây dựng luồng tải tập tin lên S3 và quy trình nhập câu hỏi tự động từ file Word"
+date: 2026-07-08
+weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 10:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Triển khai luồng upload file cho Examora bằng S3 Upload Bucket và presigned URL.
+* Cập nhật backend để tạo presigned URL theo loại file và quyền người dùng.
+* Cập nhật frontend để upload avatar, ảnh lớp học, ảnh đề thi, ảnh câu hỏi và file Word.
+* Xây dựng luồng import câu hỏi từ Word bằng S3 ObjectCreated event và Lambda.
+* Bổ sung xử lý lỗi, log và secret config cho pipeline import Word.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Thiết kế S3 Upload Bucket cho file nghiệp vụ <br> - Quy ước prefix cho avatar, ảnh lớp học, ảnh đề thi, ảnh câu hỏi và file Word <br> - Cấu hình bucket private và xem lại CORS cho luồng upload từ frontend | 22/06/2026 | 22/06/2026 | <https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html> <br> <https://docs.aws.amazon.com/AmazonS3/latest/userguide/cors.html> |
+| 3 | - Cập nhật backend để tạo presigned URL theo từng loại upload <br> - Kiểm tra JWT và role trước khi tạo URL <br> - Backend quyết định object key theo prefix và trả về presigned PUT URL cho frontend | 23/06/2026 | 23/06/2026 | <https://docs.aws.amazon.com/AmazonS3/latest/userguide/PresignedUrlUploadObject.html> <br> <https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html> |
+| 4 | - Cập nhật frontend cho luồng upload file bằng presigned URL <br> - Gọi API để lấy presigned URL và PUT file trực tiếp lên S3 <br> - Lưu lại object key khi cập nhật nghiệp vụ tương ứng | 24/06/2026 | 24/06/2026 | > |
+| 5 | - Xây dựng pipeline import câu hỏi từ file Word <br> - Upload file Word vào prefix `imports/word/raw/` <br> - Cấu hình S3 ObjectCreated event gọi Lambda Import Word Processor và kiểm tra event payload | 25/06/2026 | 25/06/2026 | <https://docs.aws.amazon.com/lambda/latest/dg/with-s3.html> <br> <https://docs.aws.amazon.com/lambda/latest/dg/with-s3-example.html> |
+| 6 | - Hoàn thiện xử lý import Word và ghi log lỗi <br> - Lambda đọc file Word từ S3 và lấy secret config cần thiết bằng Secrets Manager <br> - Ghi log kết quả import thành công hoặc thất bại để dễ kiểm tra lỗi | 26/06/2026 | 26/06/2026 | <https://docs.aws.amazon.com/lambda/latest/dg/with-secrets-manager.html> <br> |
 
 ### Kết quả đạt được tuần 10:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Thiết kế được S3 Upload Bucket private và quy ước prefix cho các loại file của Examora.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Backend tạo được presigned URL theo loại upload, role người dùng và object key do hệ thống quy định.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Frontend upload được file trực tiếp lên S3 bằng presigned URL và lưu lại object key cho nghiệp vụ.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Cấu hình được S3 ObjectCreated event để kích hoạt Lambda Import Word Processor khi có file Word mới.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Lambda Import Word Processor đọc được file từ S3, dùng secret config cần thiết và ghi log kết quả xử lý.

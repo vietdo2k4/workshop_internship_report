@@ -1,19 +1,17 @@
 ---
 title: "Self-Assessment"
-date: 2024-01-01
+date: 2026-07-08
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
 
-During my internship at **[Company/Organization Name]** from **[start date]** to **[end date]**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
-I participated in **[briefly describe the main project or task]**, through which I improved my skills in **[list skills: programming, analysis, reporting, communication, etc.]**.  
 
-In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
+During my internship at **Amazon Web Services Vietnam Co., Ltd.** from **17/04/2026** to **10/07/2026**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.
+I was involved in the development of **Examora**, a web-based multiple-choice practice platform built on an **AWS Serverless** architecture, through which I improved my skills in **programming, system analysis, architecture diagramming, technical writing, communication, and teamwork**.
+
+In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with team members to improve work efficiency.
 
 To objectively reflect on my internship period, I would like to evaluate myself based on the following criteria:
 
@@ -23,9 +21,9 @@ To objectively reflect on my internship period, I would like to evaluate myself 
 | 2   | **Ability to learn**                | Ability to absorb new knowledge and learn quickly                                                | ☐    | ✅    | ☐       |
 | 3   | **Proactiveness**                   | Taking initiative, seeking out tasks without waiting for instructions                            | ✅    | ☐    | ☐       |
 | 4   | **Sense of responsibility**         | Completing tasks on time and ensuring quality                                                    | ✅    | ☐    | ☐       |
-| 5   | **Discipline**                      | Adhering to schedules, rules, and work processes                                                 | ☐    | ☐    | ✅       |
-| 6   | **Progressive mindset**             | Willingness to receive feedback and improve oneself                                              | ☐    | ✅    | ☐       |
-| 7   | **Communication**                   | Presenting ideas and reporting work clearly                                                      | ☐    | ✅    | ☐       |
+| 5   | **Discipline**                      | Adhering to schedules, rules, and work processes                                                 | ✅    | ☐    | ☐       |
+| 6   | **Progressive mindset**             | Willingness to receive feedback and improve oneself                                              | ✅    | ☐    | ☐       |
+| 7   | **Communication**                   | Presenting ideas and reporting work clearly                                                      | ✅    | ☐    | ☐       |
 | 8   | **Teamwork**                        | Working effectively with colleagues and participating in teams                                   | ✅    | ☐    | ☐       |
 | 9   | **Professional conduct**            | Respecting colleagues, partners, and the work environment                                        | ✅    | ☐    | ☐       |
 | 10  | **Problem-solving skills**          | Identifying problems, proposing solutions, and showing creativity                                | ☐    | ✅    | ☐       |
@@ -34,6 +32,8 @@ To objectively reflect on my internship period, I would like to evaluate myself 
 
 ### Needs Improvement
 
-* Strengthen discipline and strictly comply with the rules and regulations of the company or any organization  
-* Improve problem-solving thinking  
-* Enhance communication skills in both daily interactions and professional contexts, including handling situations effectively
+* **Strengthen personal discipline:** While I made consistent efforts to follow company rules, there were moments where I wasn't proactive enough in managing my own time, leading to minor delays in task progress. I need to build a stronger habit of respecting deadlines, reporting schedules, and commitments made within the team — not just during the internship, but as a long-term self-discipline practice.
+
+* **Improve problem-solving thinking:** When encountering technical bugs or complex requirements, I sometimes spent too long searching for a direction without a structured approach. I need to practice breaking problems down into smaller components, prioritizing what to tackle first, and learning to ask the right questions early rather than wandering through trial and error on my own.
+
+* **Enhance communication skills:** In some meetings or progress updates, I struggled to present my ideas clearly and concisely, and was sometimes reluctant to speak up when uncertain. I need to actively practice delivering concise summaries, build more confidence in asking mentors and teammates questions, and develop better situational communication skills to stay composed when unexpected changes arise at work.

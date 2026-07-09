@@ -1,6 +1,6 @@
 ---
 title : "Triển khai AWS Amplify Hosting"
-date : 2024-01-01 
+date: 2026-07-08
 weight : 4
 chapter : false
 pre : " <b> 5.9.4. </b> "

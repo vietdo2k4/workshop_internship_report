@@ -1,57 +1,37 @@
 ---
-title: "Week 9 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Implementing User Authentication (Cognito + SES) and Hosting Express Backend on AWS Lambda"
+date: 2026-07-08
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 9 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Implement user authentication for Examora using Amazon Cognito and Amazon SES.
+* Update the frontend for sign-up, OTP verification, sign-in, sign-out, and forgot password flows.
+* Add Cognito identity information to user data in MongoDB.
+* Update the backend to verify Cognito JWT and sync user profiles.
+* Add a Lambda handler for the Express backend and protect APIs with API Gateway Authorizer.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 2 | - Configure Cognito User Pool and App Client for Examora <br> - **Practice:** <br>&emsp; + Create the main user groups <br>&emsp; + Configure email-based sign-up and sign-in <br>&emsp; + Verify an email identity in Amazon SES | 15/06/2026 | 15/06/2026 | <https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools.html> <br>  <br> <https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html> |
+| 3 | - Update user data to store Cognito identity information <br> - Add the required information for account synchronization and authorization <br> - Check the existing role logic to avoid breaking current business behavior | 16/06/2026 | 16/06/2026 |  <br> |
+| 4 | - Update frontend authentication flows with Cognito <br> - **Practice:** <br>&emsp; + Update sign-up and email OTP verification <br>&emsp; + Update sign-in, sign-out, and forgot password flows <br>&emsp; + Store the token for authenticated API calls | 17/06/2026 | 18/06/2026 |  <br> <https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-access-token.html> |
+| 5 | - Update the backend to verify Cognito JWT and sync profiles to MongoDB <br> - **Practice:** <br>&emsp; + Read the token from the `Authorization` header <br>&emsp; + Sync user information after sign-in <br>&emsp; + Map Cognito Groups to system roles | 19/06/2026 | 19/06/2026 |  <br> <https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html> |
+| 6 | - Add a Lambda handler for the Express backend and configure API Gateway Authorizer <br> - **Practice:** <br>&emsp; + Create an entry point for the Lambda Backend API <br>&emsp; + Configure required environment variables <br>&emsp; + Test `/health` and an authenticated API | 20/06/2026 | 20/06/2026 |   <br> <https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html> |
 
-### Week 9 Achievements:
+### Week 9 Results:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Configured Cognito User Pool, App Client, user groups, and SES email identity for the authentication flow.
 
-* Successfully created and configured an AWS Free Tier account.
+* Added Cognito identity information to user data while keeping the existing business authorization logic.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Updated the frontend for sign-up, OTP verification, sign-in, sign-out, and forgot password flows.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Verified Cognito JWT in the backend, synced user profiles, and mapped groups to system roles.
 
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Created a Lambda handler for the Express backend, configured API Gateway Authorizer, and tested an authenticated API.

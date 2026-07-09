@@ -1,57 +1,39 @@
 ---
-title: "Week 7 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Studying Asynchronous Serverless Architectures, SQS Queue Triggers, and Finalizing Project Scope"
+date: 2026-07-08
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 7 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Understand asynchronous processing in serverless architecture.
+* Practice the S3 ObjectCreated flow that invokes Lambda.
+* Use SQS to separate background processing from the main request flow.
+* Monitor Lambda with CloudWatch Logs and X-Ray.
+* Finalize the project direction, scope, and high-level architecture for the final project.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 2 | - Learn event-driven architecture with SNS and SQS <br> - Distinguish between message queue and publish/subscribe patterns <br> - Review how a queue separates the request sender from background processing | 01/06/2026 | 01/06/2026 | <https://000077.awsstudygroup.com/> <br> <https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html> |
+| 3 | - Practice an S3 ObjectCreated trigger with Lambda <br> - **Practice:** <br>&emsp; + Create an S3 bucket for the lab <br>&emsp; + Configure an event notification when an object is uploaded <br>&emsp; + Check that Lambda is invoked after the file upload | 02/06/2026 | 02/06/2026 |  <br> <https://docs.aws.amazon.com/lambda/latest/dg/with-s3-example.html> |
+| 4 | - Practice processing messages with SQS and Lambda <br> - **Practice:** <br>&emsp; + Create a test SQS queue <br>&emsp; + Send a sample message to the queue <br>&emsp; + Configure Lambda to read and process messages from the queue | 03/06/2026 | 03/06/2026 | <https://000083.awsstudygroup.com/> <br> <https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html> <br> <https://docs.aws.amazon.com/lambda/latest/dg/services-sqs-configure.html> |
+| 5 | - Monitor Lambda with CloudWatch Logs and X-Ray <br> - **Practice:** <br>&emsp; + View Lambda logs in CloudWatch Logs <br>&emsp; + Enable X-Ray tracing for the Lambda function <br>&emsp; + Check errors and request processing time | 04/06/2026 | 04/06/2026 | <https://000140.awsstudygroup.com/>  <br> <https://docs.aws.amazon.com/lambda/latest/dg/monitoring-cloudwatchlogs-view.html> |
+| 6 | - Plan and finalize the final project topic: Examora <br> - Finalize the Serverless architecture direction for the project <br> - Define the main feature groups: authentication, API/backend, file upload, Word import, asynchronous grading, and monitoring | 05/06/2026 | 05/06/2026 | <https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/welcome.html> <br> <https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html> |
 
-### Week 7 Achievements:
+### Week 7 Results:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Understood the role of SQS and SNS in event-driven architecture.
 
-* Successfully created and configured an AWS Free Tier account.
+* Configured an S3 ObjectCreated event to invoke Lambda after a file upload.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Created an SQS queue, sent a sample message, and configured Lambda to process messages from the queue.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Viewed Lambda logs in CloudWatch and enabled X-Ray tracing to monitor requests.
 
-* Used AWS CLI to perform basic operations such as:
+* Finalized Examora as the final project topic using the AWS Serverless direction.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Defined the main Examora feature groups: authentication, API/backend, file upload, Word import, asynchronous grading, and monitoring.

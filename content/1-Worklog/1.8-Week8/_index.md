@@ -1,57 +1,38 @@
 ---
-title: "Week 8 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Architecture Design and MVP Scope Definition for Examora Serverless Project"
+date: 2026-07-08
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 8 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Start the final Examora project using a Serverless architecture on AWS.
+* Draw the high-level architecture diagram for the project.
+* Identify the main features required for the MVP version.
+* Review additional documentation and labs about frontend-to-API Gateway integration.
+* Finalize the project scope and AWS services used in Examora.
+* Learn the CI/CD direction for serverless applications using AWS SAM.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 2 | - Sketch the initial Serverless architecture diagram for Examora <br> - Identify the main layers: frontend, authentication, API/backend, database, storage, async processing, and monitoring <br> - Show the main request flow from users to AWS services | 08/06/2026 | 08/06/2026 | <https://docs.aws.amazon.com/whitepapers/latest/serverless-multi-tier-architectures-api-gateway-lambda/web-application.html> <br> |
+| 3 | - Identify the main Examora features from the available source code and business requirements <br> - Group features by modules: account, classes, lessons/exams, file upload, taking exams, and exam history <br> - Note the parts that need to be built when deploying the system on AWS | 09/06/2026 | 09/06/2026 | <https://docs.aws.amazon.com/wellarchitected/latest/framework/requirements.html> |
+| 4 | - Practice a frontend-to-API Gateway integration lab to understand client/backend communication <br> - **Practice:** <br>&emsp; + Review how API Gateway is configured for backend endpoints <br>&emsp; + Test APIs using Postman <br>&emsp; + Check how the frontend calls API endpoints | 10/06/2026 | 10/06/2026 | <https://000135.awsstudygroup.com/> <br> <https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html> |
+| 5 | - Finalize the scope and AWS services used in Examora <br> - Define the main services: Amplify Hosting, Cognito, SES, API Gateway, Lambda, MongoDB Atlas, S3, SQS, CloudWatch, X-Ray, Secrets Manager, and IAM <br> | 11/06/2026 | 11/06/2026 | <https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/welcome.html> |
+| 6 | - Learn CI/CD for serverless applications using AWS SAM <br> - **Practice:** <br>&emsp; + Review the `sam build`, `sam deploy`, and automated deployment flow <br>&emsp; + Read how `sam pipeline bootstrap` and `sam pipeline init` prepare pipeline configuration <br>&emsp; + Sketch a simple backend serverless pipeline | 12/06/2026 | 12/06/2026 | <https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/deploying-cicd-overview.html> <br> <https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-generating-example-ci-cd.html> <br> |
 
-### Week 8 Achievements:
+### Week 8 Results:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Created a high-level Serverless architecture diagram for Examora.
 
-* Successfully created and configured an AWS Free Tier account.
+* Identified the main project modules: account, classes, lessons/exams, file upload, taking exams, and exam history.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Completed a reference lab about frontend-to-API Gateway integration and API testing with Postman.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Finalized the MVP scope and AWS services used in Examora.
 
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Understood the CI/CD direction for serverless applications with AWS SAM and sketched a basic backend pipeline.
